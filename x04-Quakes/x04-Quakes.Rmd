@@ -1,0 +1,38 @@
+---
+title: "Exploring Quakes"
+output: html_document
+author: "Jasmin Mousavi"
+date: "September 10, 2019"
+---
+
+```{r}
+data(quakes)
+?quakes
+```
+1. The data set give the locations of 1000 seismic events of MB > 4.0. The events occurred in a cube near Fiji since 1964. There are two clear planes of seismic activity. One is a major plate junction; the other is the Tonga trench off New Zealand. These data constitute a subsample from a larger dataset of containing 5000 observations.
+
+2. There are 5 variables recorded in the data set: lat (Latitude of event), long (Longitude), depth(Depth in km), mag(Richter Magnitude), stations(number of stations reporting).
+```{r}
+lapply(quakes, class)
+typeof(quakes$lat)
+typeof(quakes$long)
+typeof(quakes$depth)
+typeof(quakes$mag)
+typeof(quakes$stations)
+```
+3. The variables lat, long, and mag are double. The variables depth and stations are integer.
+ 
+4. Learn more about earthquakes and the type of damage is generally done based on the richtern magnitude. Understanding Fiji's geography could help with visualizing.
+
+```{r}
+summary(quakes)
+```
+5. lat: minimum(-38.59), median(-20.30), maximum(188.1)
+long: minimum(165.7), median(181.4), maximum(188.1)
+depth: minimum(40.0), median(247.0), maximum(680.0)
+mag: minimum(4.00), median(4.60), maximum(6.40)
+stations: minimum(10.00), median(27.00), maximum(132.00)
+
+6. How does the magnitude change depending on the lat/long? How many stations report depending on the magnitude? Is there a trend in magnitude and depth? How many stations report as time progresses? 
+
+
